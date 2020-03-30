@@ -1,0 +1,79 @@
+.THIS .buttonPressOn {
+    background-color: #8a1538; 
+    color:white;
+    height:40px;
+    width:195px;
+    border-radius: 10px;
+}
+
+.THIS .newButton {
+    background-color: #8a1538; 
+    color:white;
+    height:40px;
+    width:60px;
+    border-radius: 10px;
+}
+.THIS .buttonPressOff {
+    background-color: rgba(237, 220, 225, 1);
+    border: rgba(180, 151, 90, 1);
+    color: #8a1538;
+    width:195px;
+    height:40px;
+    border-radius: 10px;
+    
+}
+.THIS .slds-tabs_default__item{
+    background-color: #f4f4f4;
+    width:25%;
+    border-radius: 10px;
+}
+.THIS .slds-tabs_default__item:last-child {
+  display: none;
+}
+.THIS .slds-tabs_default__item a{
+    text-align : center;
+    text-decoration:none;
+}
+
+.THIS .slds-is-active{
+     background-color: #775319;
+}
+
+.THIS .slds-is-active a{
+     color: #FFF;
+}
+
+.THIS .slds-tabs_default__item.slds-is-active:after{
+    display:none;
+}
+
+.THIS .slds-tabs_default__item:hover:after{
+display:none;
+}
+
+.THIS .conversationCount{
+    
+    text-align: center;
+    border-radius: 50%;
+    left: 150px;
+    position: absolute;
+    top: -29px;
+    background-color: #b4975a;
+    color: white;
+    width: 20px;
+    height: 20px;
+}
+
+.THIS .qualificationCount{
+    
+    text-align: center;
+    right: 36px;
+    border-radius: 50%;
+    /*left: 50px;*/
+    position: absolute;
+    top: -29px;
+    background-color: #a7a6a4;
+    color: white;
+    width: 20px;
+    height: 20px;
+}

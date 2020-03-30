@@ -1,0 +1,110 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId,force:hasSObjectName" access="global">
+
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="record" type="Object"/>
+    <aura:attribute name="simpleRecord" type="Object"/>
+    <aura:attribute name="recordError" type="String"/>
+    <aura:attribute name="isOpen" type="boolean" default="false"/>
+    
+    <aura:attribute name="buttonPressOn" type="String" default="true"/>
+    <aura:attribute name="buttonPressOff" type="String"  default="false"/>
+    
+    <aura:dependency resource="markup://force:navigateToSObject" type="EVENT"/>
+    
+    <div class="slds-box user-profile-wrapper">
+        <div class="slds-grid slds-gutters slds-p-bottom_x-small">
+            <div class="slds-col">
+                <span> 
+                    <div align="left"  class="slds-tile__title slds-truncate slds-p-top_small" style="font-size: 17px;"  title="Service Request"> 
+                    <B >Prospect</B> 
+                    </div>
+                </span>
+            </div>
+            <div class="slds-col">
+                <span>
+                    <div align="right">
+                        <B> Rating<span class="slds-p-left_x-small"><lightning:button class="HotButton" label="⭕ HOT" title="HOT"  onclick="{!c.myAction}" />    
+                        </span></B></div>
+                </span>
+            </div>
+        </div>
+        <div class="slds-box slds-theme_default slds-p-bottom_x-small" style="border-radius: 16px;">
+            
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col">
+                    <span> 
+                        <div align="left"  class="slds-tile__title slds-truncate" style="font-size: 17px;"  title="Service Request"> 
+                            <div class="slds-p-vertical_xxx-small"><lightning:icon  size="small" iconName="action:user" title="user" /><span class="slds-p-left_x-small"> <strong>John Dae</strong></span> </div><br/>
+                        </div>
+                    </span>
+                </div>
+                <div class="slds-col">
+                    <span>
+                        <div align="right">
+                            <button class="existingCustomer" style="text-align:center">Existing Customer</button>
+                        </div>
+                    </span>
+                </div>
+            </div>
+            
+            <div class=""><img src="{!$Resource.India_Flag}" height="35" width ="35"/><span class="slds-p-left_x-small"> India </span></div><br/>
+            <div class=""> <lightning:icon size="small" iconName="utility:email"  title="Image" /><span class="slds-p-left_x-small">johndoe@gmail.com</span>&nbsp;&nbsp;&nbsp;&nbsp;<lightning:icon size="small" iconName="utility:phone_portrait"  title="Image" /><span class="slds-p-left_x-small">+91 9746468416</span></div><br/>
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col">
+                    <span> 
+                          <div align="left">
+                            <lightning:button class="actionButton"  label="Digital Marketing" title="Digital Marketing" />    
+                        </div>
+                    </span>
+                </div>
+                <div class="slds-col">
+                    <span>
+                        <div align="right">
+                            <lightning:button class="actionButton" label="Apartments" title="Apartments"  />    
+                        </div>
+                    </span>
+                </div>
+            </div>
+            
+        </div>
+        <div class="slds-p-top_medium">
+            <Strong> Follow Up at : </Strong> <button class="button">23/07/2020 | 09:30 PM </button>
+           </div>
+        <div class="slds-grid slds-gutters slds-p-top_medium">
+            <div class="slds-col">
+                <span> 
+                    <aura:if isTrue="{!v.buttonPressOn}">
+                        <div align="center">
+                            <lightning:button class="followUpButton slds-p-top_x-small slds-p-bottom_x-small"  label="Follow Up ▼" title="Follow Up ▼" onclick="{!c.followupAction1}"/>    
+                        </div>
+                    </aura:if>
+                    <aura:if isTrue="{!v.buttonPressOff}">
+                        <div align="center" >
+                            <lightning:button class="followUpButton1 slds-p-top_x-small slds-p-bottom_x-small"  label="Follow Up ▲" title="Follow Up ▲" onclick="{!c.followupAction2}"/>    
+                        </div>
+                    </aura:if>
+                </span>
+            </div>
+        </div>
+    </div>
+     
+        <aura:if isTrue="{!v.isOpen}">
+            
+            <div class="followUpStatusBox">
+                <span> <label class="slds-form-element__label" for="horizontal-form-element-id-01">
+                                                <p style="font-size:15px;color:Black">Date And Time</p></label>
+                                                <div class="slds-form-element__control">
+                                                 <lightning:input type="DateTime" name="input2" value="{!v.Time}"  />
+
+                                                </div></span>
+                <div align="right" class="slds-p-top_medium">
+                    <lightning:button label="Add"
+                                      class="AddButton"
+                                      title="Add"
+                                      onclick="{!c.likenClose}" />  
+                </div>
+            </div>
+            
+            
+        </aura:if>
+</aura:component>

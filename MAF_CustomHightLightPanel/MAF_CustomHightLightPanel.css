@@ -1,0 +1,67 @@
+.THIS {
+}
+
+.THIS .asterisk{
+    color: #ff0000 !important;
+}
+/*
+.THIS .navigation {
+    background-color:#8a1538;
+}*/
+
+.THIS .button {
+    background-color: #8a1538; 
+    color:white;
+    width:190px;
+    height:40px;
+}
+.THIS .textColor {
+    color:  #8a1538; 
+}
+.THIS .actionButton {
+    background-color: #8a1538; 
+    color:white;
+    width:150px;
+    height:30px;
+}
+.THIS .buttonPressOn {
+    background-color: #8a1538; 
+    color:white;
+    height:40px;
+    border-radius: 10px;
+}
+.THIS .buttonPressOff {
+    background-color: rgba(237, 220, 225, 1);
+    color: #8a1538;
+    height:40px;
+    border-radius: 10px;
+}
+
+.THIS .statusButton {
+    background-color: rgba(237, 220, 225, 1);
+    color: #8a1538;
+    height: 40px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.THIS.leadStatusBox {
+    height: 240px;
+    width: 400px;
+    border-radius:10px;
+    z-index: 100;
+    position: absolute;
+    right: 12px;
+    top: 62px;
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+.THIS .changeStatusClass {
+    
+    display: inline-block;
+    position: absolute;
+    float: right;
+    right: 0px;
+    top: 10px;
+}

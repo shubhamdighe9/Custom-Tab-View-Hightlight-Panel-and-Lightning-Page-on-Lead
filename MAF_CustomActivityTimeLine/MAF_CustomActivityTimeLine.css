@@ -1,0 +1,43 @@
+.THIS .photoWrapper{
+    width: 7rem;
+    height: 7rem;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.THIS{
+    /* background-color: token(colorBackgroundBrandPrimary); */
+    background-color: #F2f2f2;
+    min-height: 13rem;
+}
+
+
+.THIS .slds-tabs_default__item{
+    background-color: #f4f4f4;
+    width:25%;
+    border-radius: 10px;
+}
+.THIS .slds-tabs_default__item:last-child {
+    display: none;
+}
+.THIS .slds-tabs_default__item a{
+    text-align : center;
+    text-decoration:none;
+}
+
+.THIS .slds-is-active{
+    background-color: #8a1538;
+}
+
+.THIS .slds-is-active a{
+    color: #FFF;
+}
+
+.THIS .slds-tabs_default__item.slds-is-active:after{
+    display:none;
+}
+
+.THIS .slds-tabs_default__item:hover:after{
+    display:none;
+}

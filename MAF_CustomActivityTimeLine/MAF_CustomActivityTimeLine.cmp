@@ -1,0 +1,38 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId,force:hasSObjectName" access="global">
+    
+    <aura:dependency resource="markup://force:navigateToSObject" type="EVENT"/>
+    
+    <div class="slds-box user-profile-wrapper">
+        
+        <div class="slds-box slds-theme_default slds-p-bottom_x-small" style="border-radius: 16px;">
+            
+            <lightning:tabset selectedTabId="Conversation">
+                <lightning:tab class="tabViewClass" label="Email" id="Conversation">
+                    
+                    <div style="font-size:15px;">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis.
+                        <br/>
+                    </div>
+                    
+                </lightning:tab>
+                <lightning:tab class="tabViewClass" label="New Event" id="Lead Source">
+                    Lead Source Content !
+                    
+                </lightning:tab >
+                <lightning:tab class="tabViewClass" label="New Task" id="Contact">
+                    Contact Content !
+                   
+                </lightning:tab>
+                <lightning:tab class="tabViewClass" label="Log a Call" id="Qualification">
+                    
+                    Log a Call Content !
+                    
+                </lightning:tab>
+                <lightning:tab class="tabViewClass" label="" id="">
+                    
+                    Three Content !
+                </lightning:tab>
+            </lightning:tabset>
+        </div>
+    </div>
+</aura:component>

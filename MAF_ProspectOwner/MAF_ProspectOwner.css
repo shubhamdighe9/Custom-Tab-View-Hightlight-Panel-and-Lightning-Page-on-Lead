@@ -1,0 +1,144 @@
+.THIS .photoWrapper{
+    width: 7rem;
+    height: 7rem;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.THIS{
+    /* background-color: token(colorBackgroundBrandPrimary); */
+    background-color: #F2f2f2;
+    min-height: 20rem;
+}
+
+.THIS .slds-select{
+    color: black;
+}
+
+.THIS .actionButton {
+    border: 1px solid rgba(180, 151, 90, 1);
+    background-color: white;
+    color: rgba(180, 151, 90, 1);
+    width:160px;
+    height:50px;
+    border-radius: 10px;
+    padding: 3px 15px;
+    
+}
+
+.THIS .existingCustomer {
+    border: rgba(180, 151, 90, 1);
+    color:white;
+    width:150px;
+    background-color: white;
+    padding:5px 15px;
+}
+
+.THIS .followUpButton {
+    background-color: #8a1538; 
+    color:white;
+    width:370px;
+    height:40px;
+    border-radius: 9px;
+    
+}
+.THIS .followUpButton1 {
+    background-color: rgba(237, 220, 225, 1);
+    color: #8a1538;
+    width:370px;
+    height:40px;
+    border-radius: 9px;
+}
+
+.THIS .HotButton{
+    background-color: white; 
+    border: #8a1538;
+    border-radius: 9px;
+    padding: 3px 15px;
+    color: black;
+}
+
+.THIS .AddButton{
+    background-color: #8a1538;
+    border-radius: 9px;
+    padding: 3px 15px;
+    color: white;
+}
+
+.THIS .slds-text-heading_medium{
+    /* font-size: 1.5rem;
+    line-height: 1.5rem;
+    font-weight: 500; */
+}
+
+.THIS .slds-text-heading_small{
+    font-weight: 300;
+}
+
+.THIS .slds-dl_horizontal__label,.THIS .slds-dl--horizontal__label{
+    font-weight: 300;
+}
+
+.THIS .separator{
+    width: 98%;
+    margin-left: 1%;
+    border-bottom: 1px solid white;
+}
+
+.THIS dl dd, .THIS dl dt{
+    margin: .33rem 0;
+    word-wrap: break-word;
+}
+
+.THIS .button {
+    width:200px;
+    height:30px;
+    background-color: rgba(180, 151, 90, 1);
+    border: none;
+    color:white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 16px;
+}
+
+
+.THIS .existingCustomer {
+    width:170px;
+    height:30px;
+    background-color: white;
+    border-style: solid;
+    border-width: thin;
+    border-color: rgba(180, 151, 90, 1);
+    color: rgba(180, 151, 90, 1);;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 16px;
+}
+
+.THIS .button:hover {
+    background-color: #8a1538;
+}
+
+.THIS.followUpStatusBox {
+    min-height: 170px;
+    width: 370px;
+    border-radius: 10px;
+    z-index: 100;
+    position: absolute;
+    left: 20px;
+    top: 424px;
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    max-height: 280px;
+    height: auto;
+}

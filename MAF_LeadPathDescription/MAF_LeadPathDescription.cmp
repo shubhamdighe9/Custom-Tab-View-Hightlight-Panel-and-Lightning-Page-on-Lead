@@ -1,0 +1,121 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId,force:hasSObjectName" access="global">
+    
+    <aura:attribute name="variant" type="String" default="non-linear"/>
+    <aura:attribute name="hideUpdateButton" type="Boolean" default="false"/>
+    <aura:html tag="style">
+        table, th, td {
+        border: 1px solid #d7d7d7;
+        border-collapse: collapse;
+        font-family: 'Roboto', sans-serif;
+        }
+        thead tr th{
+        color: #7F7F7F;
+        padding: 8px!important;
+        text-align:center;
+        background: #f2f2f2;
+        font-size: 13px;
+        font-weight: normal;
+        font-family: 'Roboto', sans-serif;
+        }
+        tbody tr td{
+        color: #555;
+        padding: 15px;
+        background: #fff;
+        font-size: 14px;
+        font-family: 'Roboto', sans-serif;
+        }
+    </aura:html>
+    <div class="slds-box slds-theme_default slds-p-bottom_x-small" style="border-radius: 16px;">
+        
+        <lightning:tabset selectedTabId="Conversation">
+            <lightning:tab class="tabViewClass" label="Conversation" id="Conversation">
+                <div class="conversationCount">4
+                </div>
+                <div class="qualificationCount">3
+                </div>
+                <div style="font-size:15px;">
+                  
+                     <div align="right">
+                       <lightning:button label="New" class="newButton" title="New" />  
+                    </div>
+                   
+                    <br/> 
+                    <table style="width:100%">
+                        <thead>
+                            <th style="background-color:#F2f2f2;color:#000;font-size: 13px;font-weight: normal;font-family: 'Roboto', sans-serif;padding: 8px!important;text-align:center;">Created Date</th>
+                            <th style="background-color:#F2f2f2;color:#000;font-size: 13px;font-weight: normal;font-family: 'Roboto', sans-serif;padding: 8px!important;text-align:center;">Description</th> 
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td width="100">13/7/2020
+                                    11.05 AM</td>
+                                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.</td>
+                            </tr>
+                            <tr>
+                                <td>12/7/2020
+                                    
+                                    09.30 AM</td>
+                                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor.</td>
+                            </tr>
+                            <tr>
+                                <td>10/7/2020
+                                    
+                                    02.30 PM</td>
+                                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis.</td>
+                            </tr>
+                            <tr>
+                                <td>12/7/2020
+                                    
+                                    09.30 AM</td>
+                                <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/> <br/>  <br/>  <br/>  <br/>  <br/>   <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>
+                </div>
+                
+            </lightning:tab>
+            <lightning:tab class="tabViewClass" label="Lead Source" id="Lead Source">
+                Lead Source Content !
+                   <div class="conversationCount">4
+                </div>
+                <div class="qualificationCount">3
+                </div>
+            </lightning:tab >
+            <lightning:tab class="tabViewClass" label="Contact" id="Contact">
+                Contact Content !
+                   <div class="conversationCount">4
+                </div>
+                <div class="qualificationCount">3
+                </div>
+            </lightning:tab>
+            <lightning:tab class="tabViewClass" label="Qualification" id="Qualification">
+                
+                Qualification Content !
+                   <div class="conversationCount">4
+                </div>
+                <div class="qualificationCount">3
+                </div>
+            </lightning:tab>
+             <lightning:tab class="tabViewClass" label="" id="">
+                
+                Three Content !
+            </lightning:tab>
+        </lightning:tabset>
+        
+       <!-- <span>  <lightning:button label="Conversation(4)" class="buttonPressOn" title="Conversation"  />  
+            <lightning:button label="Lead Source" class="buttonPressOff" title="Lead Source"   />  
+            <lightning:button label="Contact" class="buttonPressOff" title="Contact" />  
+            <lightning:button label="Qualification" class="buttonPressOff" title="Qualification" />  
+        </span>
+        <div >
+        <lightning:path aura:id="path" recordId="{!v.recordId}"
+                        variant="{!v.variant}"
+                        hideUpdateButton="{!v.hideUpdateButton}"
+                        onselect="{!c.handleSelect}"
+                        />
+        </div>-->
+        
+    </div>
+    
+</aura:component>

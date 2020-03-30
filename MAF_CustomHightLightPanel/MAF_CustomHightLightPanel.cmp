@@ -1,0 +1,133 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickActionWithoutHeader" access="global" >
+    
+    <!-- To implement LDS we need "target" attributes to show and save data, plus "force:recordData" -->
+    <aura:attribute name="record" type="Object" />
+    <aura:attribute name="simpleRecord" type="Object" />
+    <aura:attribute name="recordError" type="String" />
+    
+    <aura:attribute name="objectName" type="String" />
+    <aura:attribute name="objectIcon" type="String" />
+    <aura:attribute name="panelTitle" type="String" />
+    <aura:attribute name="field01Name" type="String" />
+    <aura:attribute name="field02Name" type="String" />
+    <aura:attribute name="field03Name" type="String" />
+    <aura:attribute name="field04Name" type="String" />
+    <aura:attribute name="field05Name" type="String" />
+    <aura:attribute name="field06Name" type="String" />
+    <aura:attribute name="field07Name" type="String" />
+    <aura:attribute name="field08Name" type="String" />
+    <aura:attribute name="field09Name" type="String" />
+    <aura:attribute name="field10Name" type="String" />
+    
+    <aura:attribute name="buttonPressOn" type="String" default="true"/>
+    <aura:attribute name="buttonPressOff" type="String"  default="false"/>
+    
+    
+    <aura:attribute name="title" type="String" />
+    <aura:attribute name="statusList" type="List" default="[
+                                                           {'label': 'New', 'value': 'New'},
+                                                           {'label': 'In Progress', 'value': 'In Progress'},
+                                                           {'label': 'Not Contactable', 'value': 'Not Contactable'},
+                                                           {'label': 'Converted', 'value': 'Converted'},
+                                                           {'label': 'Junk', 'value': 'Junk'},
+                                                           {'label': 'Retired', 'value': 'Retired'},
+                                                           ]"/>
+    
+    <aura:attribute name="isOpen" type="boolean" default="false"/>
+    
+    <force:recordData aura:id="record"
+                      layoutType="FULL"
+                      recordId="{!v.recordId}"
+                      targetError="{!v.recordError}"
+                      targetRecord="{!v.record}"
+                      targetFields="{!v.simpleRecord}"
+                      mode="VIEW" />
+    
+    <!-- Display LDS errors, if any -->
+    <aura:if isTrue="{!not(empty(v.recordError))}">
+        <div class="recordError">
+            <ui:message title="Error" severity="error" closable="true">
+                {!v.recordError}
+            </ui:message>
+        </div>
+    </aura:if>
+    <lightning:recordViewForm recordId="{!v.recordId}" objectApiName="{!v.objectName}" density="comfy">
+        
+        <lightning:card title="" iconName="{!v.objectIcon}">
+            <aura:if isTrue="{!v.buttonPressOn}">
+                <div align="right" class="changeStatusClass slds-p-right_small">
+                    <lightning:button label="Change Status ▼" class="buttonPressOn" title="Change Status"  onclick="{!c.changeStatusAction1}" />  
+                </div>
+            </aura:if>
+            <aura:if isTrue="{!v.buttonPressOff}">
+                <div align="right" class="changeStatusClass slds-p-right_small">
+                    <lightning:button label="Change Status ▲" class="buttonPressOff" title="Change Status"  onclick="{!c.changeStatusAction2}" />  
+                </div>
+            </aura:if>
+            <lightning:layout multipleRows="true">
+                <lightning:layoutItem flexibility="auto, no-grow" padding="horizontal-medium">
+                    <lightning:outputField fieldName="{!v.field01Name}"/>
+                </lightning:layoutItem>
+                <lightning:layoutItem flexibility="auto, no-grow" padding="horizontal-medium">
+                    <lightning:outputField fieldName="{!v.field02Name}" />
+                </lightning:layoutItem>
+                <lightning:layoutItem flexibility="auto, no-grow" padding="horizontal-medium">
+                    <lightning:outputField fieldName="{!v.field03Name}" />
+                </lightning:layoutItem>                  
+                <lightning:layoutItem flexibility="auto, no-grow" padding="horizontal-medium">
+                    <lightning:outputField fieldName="{!v.field04Name}" />
+                </lightning:layoutItem>
+                <lightning:layoutItem flexibility="auto, no-grow" padding="horizontal-medium">
+                    <lightning:outputField fieldName="{!v.field05Name}" />
+                </lightning:layoutItem>                  
+                <lightning:layoutItem flexibility="auto, no-grow" padding="horizontal-medium">
+                    <lightning:outputField fieldName="{!v.field06Name}" />
+                </lightning:layoutItem>
+                <lightning:layoutItem flexibility="auto, no-grow" padding="horizontal-medium">
+                    <lightning:outputField fieldName="{!v.field07Name}" />
+                </lightning:layoutItem>  
+                <lightning:layoutItem flexibility="auto, no-grow" padding="horizontal-medium">
+                    <lightning:outputField fieldName="{!v.field08Name}" />
+                </lightning:layoutItem>                  
+                <lightning:layoutItem flexibility="auto, no-grow" padding="horizontal-medium">
+                    <lightning:outputField fieldName="{!v.field09Name}" />
+                </lightning:layoutItem>
+                <lightning:layoutItem flexibility="auto, no-grow" padding="horizontal-medium">
+                    <lightning:outputField fieldName="{!v.field10Name}" />
+                </lightning:layoutItem>    
+                
+            </lightning:layout>
+            
+        </lightning:card>
+    </lightning:recordViewForm>
+    
+    <aura:if isTrue="{!v.isOpen}">
+        
+        <div class="leadStatusBox">
+            <aura:iteration items="{!v.statusList}" var="status">
+                <span class="slds-p-top_small slds-p-bottom_small slds-p-right_small">
+                    <lightning:button class="statusButton" variant="brand" 
+                                      label="{!status.label}"
+                                      title="{!status.label}"
+                                      onclick="{! c.likenClose }"/>
+                </span>
+                
+            </aura:iteration>
+            <span class="slds-p-top_small slds-p-bottom_small slds-p-right_small">
+                <lightning:select name="select1" label="Live Update" required="true">
+                    <option value="Follow Up">Follow Up</option>
+                    <option value="Just Enquiry">Just Enquiry</option>
+                    <option value="Cannot Contact">Cannot Contact</option>
+                </lightning:select>
+            </span>
+            <div align="right">
+                <lightning:button label="Change Status"
+                                  class="buttonPressOn"
+                                  title="Change Status"
+                                  onclick="{!c.likenClose}" />  
+            </div>
+        </div>
+        
+        
+    </aura:if>
+</aura:component>
